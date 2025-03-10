@@ -13,9 +13,9 @@
   
   嘗試從台北公開資料網站使用Youbike即時資料，特別觀察師大附近幾個特定站點，去判斷建不建議借youbike，以及提醒那些地點無車可借、無位可還。
 
-  使用資料:台北市 YouBike 2.0 API URL = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json"
+  使用資料: 台北市 YouBike 2.0 API URL = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json"
 
-  檔案參考:youbikeAgent.py、youbikeAgent.csv
+  檔案參考: youbikeAgent.py、youbikeAgent.csv
   
 - 流程圖
 - 預計使用的套件
