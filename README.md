@@ -15,7 +15,7 @@
 
   使用資料: 台北市 YouBike 2.0 API URL = "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json"
 
-  檔案參考: youbikeAgent.py、youbikeAgent.csv
+  檔案參考: youbikeAgent.py、youbike_analysis_log.csv
   
 - 流程圖
 - 預計使用的套件
