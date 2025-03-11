@@ -20,10 +20,32 @@
 
    程式碼:
   - 引入函式庫
-   - os: 用來讀取環境變數，例如 API 金鑰。
-   - asyncio: 用於非同步處理，提高程式效率。
-   - pandas: 處理 YouBike API 回傳的 JSON 數據並轉換成 DataFrame。
-   - requests: 取得 YouBike API 的即時數據。
+     1. os: 用來讀取環境變數，例如 API 金鑰。
+     2. asyncio: 用於非同步處理，提高程式效率。
+     3. pandas: 處理 YouBike API 回傳的 JSON 數據並轉換成 DataFrame。
+     4. requests: 取得 YouBike API 的即時數據。
+     5. dotenv: 用於讀取 .env 檔案中的環境變數。
+     6. autogen_agentchat 和 autogen_ext: 與 AI 代理人相關的函式庫，負責自動對話與分析。
+。
+  <pre><code>
+  import os
+  import asyncio
+  import pandas as pd
+  import requests
+
+  from dotenv import load_dotenv
+  from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
+  from autogen_agentchat.conditions import TextMentionTermination
+  from autogen_agentchat.teams import RoundRobinGroupChat
+  from autogen_agentchat.messages import TextMessage
+  from autogen_ext.models.openai import OpenAIChatCompletionClient
+  </code></pre>
+
+- 引入函式庫
+     1. os: 用來讀取環境變數，例如 API 金鑰。
+     2. asyncio: 用於非同步處理，提高程式效率。
+     3. pandas: 處理 YouBike API 回傳的 JSON 數據並轉換成 DataFrame。
+     4. requests: 取得 YouBike API 的即時數據。
 。
   <pre><code>
   import os
@@ -31,7 +53,6 @@
   import pandas as pd
   import requests
   </code></pre>
-  
 
   - 虛擬導盲器
     
