@@ -18,21 +18,10 @@
 
    檔案參考: youbikeAgent.py、youbike_analysis_log.csv
 
-   程式碼:
-  - 引入函式庫
-     1. os: 用來讀取環境變數，例如 API 金鑰。
-     2. asyncio: 用於非同步處理，提高程式效率。
-     3. pandas: 處理 YouBike API 回傳的 JSON 數據並轉換成 DataFrame。
-     4. requests: 取得 YouBike API 的即時數據。
-     5. dotenv: 用於讀取 .env 檔案中的環境變數。
-     6. autogen_agentchat 和 autogen_ext: 與 AI 代理人相關的函式庫，負責自動對話與分析。
+   程式碼(重點解說):
+  - 引入函式庫，加入要使用的AI Agent
 
   <pre><code>
-  import os
-  import asyncio
-  import pandas as pd
-  import requests
-
   from dotenv import load_dotenv
   from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
   from autogen_agentchat.conditions import TextMentionTermination
@@ -41,11 +30,6 @@
   from autogen_ext.models.openai import OpenAIChatCompletionClient
   </code></pre>
 
-- 讀取環境變數
-
-  <pre><code>
-  load_dotenv()
-  </code></pre>
 
 -  設定 YouBike API URL
 
@@ -95,7 +79,7 @@
         return None
   </code></pre>
 
-- 非同步處理 YouBike 數據
+- 非同步處理 YouBike 數據，下咒語
   <pre><code>
    async def process_chunk(chunk, start_idx, total_records, model_client, termination_condition):
     chunk_data = chunk.to_dict(orient='records')
@@ -118,22 +102,8 @@
         [local_data_agent, local_assistant, local_user_proxy],
         termination_condition=termination_condition
     )
-    
-    messages = []
-    async for event in local_team.run_stream(task=prompt):
-        if isinstance(event, TextMessage):
-            print(f"[{event.source}] => {event.content}\n")
-            messages.append({
-                "batch_start": start_idx,
-                "batch_end": start_idx + len(chunk) - 1,
-                "source": event.source,
-                "content": event.content,
-                "type": event.type,
-                "prompt_tokens": event.models_usage.prompt_tokens if event.models_usage else None,
-                "completion_tokens": event.models_usage.completion_tokens if event.models_usage else None
-            })
-    return messages
   </code></pre>
+  
   - 主程式
     <pre><code>
      async def main():
