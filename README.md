@@ -97,8 +97,44 @@
 
 - 非同步處理 YouBike 數據
   <pre><code>
-   
-  </code></pre>
+   async def process_chunk(chunk, start_idx, total_records, model_client, termination_condition):
+    chunk_data = chunk.to_dict(orient='records')
+    prompt = (
+        f"目前正在處理第 {start_idx} 至 {start_idx + len(chunk) - 1} 筆 YouBike 站點數據（共 {total_records} 筆）。\n"
+        f"以下為該批次 YouBike 即時資訊:\n{chunk_data}\n\n"
+        "其中YouBike2.0_師大公館校區學二舍、YouBike2.0_師範大學公館校區、YouBike2.0_師範大學公館校區_1、YouBike2.0_景美污水抽水站位於師大分部；YouBike2.0_臺灣師範大學(圖書館)、YouBike2.0_和平龍泉街口、YouBike2.0_臺灣師範大學(浦城街)位於師大本部\n"
+        "請根據以上數據進行分析，並提供完整的 YouBike 站點建議。\n"
+        "請特別關注以下方面：\n"
+        "  1. 哪些站點即將無車可借？\n"
+        "  2. 哪些站點快要沒有車位可還？\n"
+        "  3. 是否建議從師大分部，騎腳踏車到師大本部?\n"
+        "請各代理人協同合作，提供一份完整且具參考價值的分析。"
+    )
+    
+    local_data_agent = AssistantAgent("data_agent", model_client)
+    local_assistant = AssistantAgent("assistant", model_client)
+    local_user_proxy = UserProxyAgent("user_proxy")
+    local_team = RoundRobinGroupChat(
+        [local_data_agent, local_assistant, local_user_proxy],
+        termination_condition=termination_condition
+    )
+    
+    messages = []
+    async for event in local_team.run_stream(task=prompt):
+        if isinstance(event, TextMessage):
+            print(f"[{event.source}] => {event.content}\n")
+            messages.append({
+                "batch_start": start_idx,
+                "batch_end": start_idx + len(chunk) - 1,
+                "source": event.source,
+                "content": event.content,
+                "type": event.type,
+                "prompt_tokens": event.models_usage.prompt_tokens if event.models_usage else None,
+                "completion_tokens": event.models_usage.completion_tokens if event.models_usage else None
+            })
+    return messages
+  - 主程式
+    
 
   ## 虛擬導盲器
     
