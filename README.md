@@ -133,8 +133,55 @@
                 "completion_tokens": event.models_usage.completion_tokens if event.models_usage else None
             })
     return messages
+  </code></pre>
   - 主程式
+    <pre><code>
+     async def main():
+    gemini_api_key = os.environ.get("GEMINI_API_KEY")
+    if not gemini_api_key:
+        print("請檢查 .env 檔案中的 GEMINI_API_KEY。")
+        return
+
+    model_client = OpenAIChatCompletionClient(
+        model="gemini-2.0-flash",
+        api_key=gemini_api_key,
+    )
     
+    termination_condition = TextMentionTermination("exit")
+    
+    # 取得 YouBike JSON 資料
+    df_youbike = fetch_youbike_data()
+    if df_youbike is None:
+        print("無法處理 YouBike 資料。")
+        return
+    
+    # 設定 chunk_size 分批處理
+    chunk_size = 50  # 調整批次大小
+    chunks = [df_youbike.iloc[i:i + chunk_size] for i in range(0, df_youbike.shape[0], chunk_size)]
+    total_records = df_youbike.shape[0]
+    
+    tasks = list(map(
+        lambda idx_chunk: process_chunk(
+            idx_chunk[1],
+            idx_chunk[0] * chunk_size,
+            total_records,
+            model_client,
+            termination_condition
+        ),
+        enumerate(chunks)
+    ))
+    
+    results = await asyncio.gather(*tasks)
+    all_messages = [msg for batch in results for msg in batch]
+    
+    df_log = pd.DataFrame(all_messages)
+    output_file = "youbike_analysis_log.csv"
+    df_log.to_csv(output_file, index=False, encoding="utf-8-sig")
+    print(f"已將所有對話紀錄輸出為 {output_file}")
+
+if __name__ == '__main__':
+    asyncio.run(main())
+    </code></pre>
 
   ## 虛擬導盲器
     
