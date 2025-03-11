@@ -179,9 +179,9 @@
     df_log.to_csv(output_file, index=False, encoding="utf-8-sig")
     print(f"已將所有對話紀錄輸出為 {output_file}")
 
-if __name__ == '__main__':
-    asyncio.run(main())
-    </code></pre>
+ if __name__ == '__main__':
+     asyncio.run(main())
+     </code></pre>
 
   ## 虛擬導盲器
     
