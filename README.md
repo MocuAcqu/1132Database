@@ -18,6 +18,21 @@
 
    檔案參考: youbikeAgent.py、youbike_analysis_log.csv
 
+   程式碼:
+  - 引入函式庫
+   - os: 用來讀取環境變數，例如 API 金鑰。
+   - asyncio: 用於非同步處理，提高程式效率。
+   - pandas: 處理 YouBike API 回傳的 JSON 數據並轉換成 DataFrame。
+   - requests: 取得 YouBike API 的即時數據。
+。
+  <pre><code>
+  import os
+  import asyncio
+  import pandas as pd
+  import requests
+  </code></pre>
+  
+
   - 虛擬導盲器
     
    因為希望製作更不一樣，並且能帶來不同意義的成果，想到導盲犬數量不足夠引導目前的盲人數量，希望製作一個能夠替代導盲犬提示盲者的虛擬導盲犬機器。
