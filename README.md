@@ -32,3 +32,25 @@
  
 - 預計使用的套件
 - 相對應程式碼
+  <pre><code>
+   import os
+   import asyncio
+   import pandas as pd
+   import requests
+   from dotenv import load_dotenv
+   from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
+   from autogen_agentchat.conditions import TextMentionTermination
+   from autogen_agentchat.teams import RoundRobinGroupChat
+   from autogen_agentchat.messages import TextMessage
+   from autogen_ext.models.openai import OpenAIChatCompletionClient
+</code></pre>
+
+  dotenv：載入 .env 檔案，用於讀取 API 金鑰。
+  requests：用來呼叫 YouBike API，取得即時的 YouBike 站點資訊。
+  pandas：用來處理 API 回傳的 JSON 資料，轉換成 DataFrame 格式並篩選需要的欄位。
+  asyncio：用於非同步處理，確保批次任務可以並行執行，加快處理速度。
+  autogen_agentchat 相關套件：
+  AssistantAgent、UserProxyAgent：建立 AI 代理人來進行數據分析。
+  TextMentionTermination：設定對話的終止條件。
+  RoundRobinGroupChat：管理 AI 代理人的對話方式（輪流回應）。
+  OpenAIChatCompletionClient：連接 OpenAI API，使用 gemini-2.0-flash 模型來分析數據。
