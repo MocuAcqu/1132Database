@@ -37,3 +37,7 @@
   TextMentionTermination：設定對話的終止條件。
   RoundRobinGroupChat：管理 AI 代理人的對話方式（輪流回應）。
   OpenAIChatCompletionClient：連接 OpenAI API，使用 gemini-2.0-flash 模型來分析數據。
+
+
+# 課程練習
+
