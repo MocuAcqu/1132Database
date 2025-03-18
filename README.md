@@ -45,7 +45,7 @@
 【親子對話分析專家】
 假設身分為親子對話分析專家，去分析一段錄音逐字對話紀錄中，是否觸及評分項目的標記，並輸出成CSV檔。
 - 使用資料: [113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv)
-- 程式碼: [DRai.py]()
+- 程式碼: [DRai.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai.py)
 - 評分項目
   | 引導 | 評估(口語、跟讀的內容有關) | 評估(非口語、寶寶自發性動作、跟讀的內容有關) | 延伸討論 | 複述 | 開放式問題 | 填空 | 回想 | 人事時地物問句 | 連結生活經驗 | 備註 |
   |-|-|-|-|-|-|-|-|-|-|-|
