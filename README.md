@@ -51,6 +51,8 @@
 ### 【大學生面試對話分析專家】
 
 假設身分為大學生面試對話分析專家，去分析一段錄音逐字對話紀錄中，是否觸及評分項目的標記，並輸出成CSV檔。(替換老師範例資料)
+
+此對話紀錄來自於AI生成。
 - 使用資料: [interview.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/interview.csv)
 - 程式碼: [DRai2.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai2.py)
 
