@@ -203,14 +203,18 @@ def fetch_youbike_data():
 
 ## 【moodle】
    - 動機: 因為想往「批改系統」的方向製作，而想到第一個與我最有關的學生作業作業系統便是Moodle，所以想嘗試讓playwright來控制登入moodle
+   - 功能: 此程式可以抓取學生moodle上特定課程的特定作業回答
 
    - 啟動過程流程圖
-     ![image]()
+     ![image](https://github.com/MocuAcqu/1132Database/blob/main/moodleAI.drawio.png)
      
 
 | 程式碼 |  輸出結果 |
 |:--:|:--:|
 | [moodleAI.py](https://github.com/MocuAcqu/1132Database/blob/main/moodleAI.py) |[submissions.csv](https://github.com/MocuAcqu/1132Database/blob/main/submissions.csv) |
 
+## 輸出結果截圖
+| ![image](https://github.com/MocuAcqu/1132Database/blob/main/DRai2_1.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/DRai2_2.png) |
+|--|--|
 
 
