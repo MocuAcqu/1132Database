@@ -111,17 +111,17 @@ def fetch_youbike_data():
 ****
 
   ### 3.3 autogen_agentchat.teams
-
+  RoundRobinGroupChat：這個模組實現了循環輪播組聊功能，用於將不同的對話參與者分配給多個team。
 
 ****
 
   ### 3.4 autogen_agentchat.messagautogen_agentchat.messageses
-
+  TextMessage：這個模組定義了文本訊息的結構，用於在系統中處理和生成文本訊息。
 
 ****
 
   ### 3.5 autogen_ext.models.openai
-
+  OpenAIChatCompletionClient：這是一個與OpenAI對話完成模型集成的客戶端，用於向OpenAI模型發送對話提示並接收完成的對話回應。
 
 
 # 課程練習
