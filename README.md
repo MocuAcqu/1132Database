@@ -86,16 +86,42 @@ def fetch_youbike_data():
 
 
 
-  ## 架構圖
+  ## 2. 架構圖
    ![image](https://github.com/MocuAcqu/1132Database/blob/main/youbike.drawio.png)
 
 
-- 預計使用的套件
-- 相對應程式碼
+  ## 3. 使用的AI Agent
+  ```
+  from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
+  from autogen_agentchat.conditions import TextMentionTermination
+  from autogen_agentchat.teams import RoundRobinGroupChat
+  from autogen_agentchat.messagautogen_agentchat.messageses import TextMessage
+  from autogen_ext.models.openai import OpenAIChatCompletionClient
+  ```
+  ### 3.1 autogen_agentchat.agents
+  AssistantAgent 和 UserProxyAgent：這兩個套件屬於自動生成代理人對話系統的一部分。AssistantAgent 負責處理代理人（或機器人）的回應，而 UserProxyAgent 則充當用戶的代理，接收和處理用戶的輸入。
   
-  TextMentionTermination：設定對話的終止條件。
-  RoundRobinGroupChat：管理 AI 代理人的對話方式（輪流回應）。
-  OpenAIChatCompletionClient：連接 OpenAI API，使用 gemini-2.0-flash 模型來分析數據。
+****
+
+  ### 3.2 autogen_agentchat.conditions
+  TextMentionTermination：這是一個條件模組，用於在對話系統中設定終止對話的條件，通常用於根據文本中的特定提及來終止對話。而這次的程式碼是使用"exit"來當終結對話的特定詞。
+  ```
+  termination_condition = TextMentionTermination("exit")
+  ```
+****
+
+  ### 3.3 autogen_agentchat.teams
+
+
+****
+
+  ### 3.4 autogen_agentchat.messagautogen_agentchat.messageses
+
+
+****
+
+  ### 3.5 autogen_ext.models.openai
+
 
 
 # 課程練習
