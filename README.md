@@ -6,7 +6,7 @@
 
 ## 目錄
 - [HW1](#HW1)
-  - [1.資料抽換及問題抽換](##1.資料抽換及問題抽換)
+  - [1.資料抽換及問題抽換](https://github.com/MocuAcqu/1132Database/blob/main/README.md#1%E8%B3%87%E6%96%99%E6%8A%BD%E6%8F%9B%E5%8F%8A%E5%95%8F%E9%A1%8C%E6%8A%BD%E6%8F%9B)
   - [2.架構圖](##2.架構圖)
   - [3.使用的AI Agent](##3.使用的AI助理)
 - [HW2](#HW2)
