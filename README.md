@@ -87,7 +87,7 @@ def fetch_youbike_data():
 
 
   ## 架構圖
-   ![image](https://github.com/MocuAcqu/1132Database/blob/main/Youbike%E6%8E%A2%E6%9F%A5%E5%99%A8.png)
+   ![image](https://github.com/MocuAcqu/1132Database/blob/main/youbike.drawio.png)
 
 
 - 預計使用的套件
