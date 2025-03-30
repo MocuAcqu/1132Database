@@ -9,10 +9,10 @@
   - [資料抽換及問題抽換](#1資料抽換及問題抽換)
   - [架構圖](#2架構圖)
   - [使用的AI Agent](#3使用的ai-agent)
-- [HW2](#HW2)
+- ### [HW2](#HW2)
   - [【DRai 親子對話分析專家】](#drai-親子對話分析專家)
   - [【大學生面試對話分析專家】](#大學生面試對話分析專家)
-- [HW3](#HW3)
+- ### [HW3](#HW3)
 
 # 作業繳交區
 
@@ -200,5 +200,9 @@ def fetch_youbike_data():
 # HW3
 利用Playwright控制瀏覽器，並給予程式碼的執行截圖，截圖方式同HW2
 
+## 【moodle】
+| 使用資料 |  程式碼 |
+|:--:|:--:|
+| [interview.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/interview.csv) |[DRai2.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai2.py) |
 
 
