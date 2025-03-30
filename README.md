@@ -99,30 +99,68 @@ def fetch_youbike_data():
   from autogen_ext.models.openai import OpenAIChatCompletionClient
   ```
   ### 3.1 autogen_agentchat.agents
-  AssistantAgent 和 UserProxyAgent：這兩個套件屬於自動生成代理人對話系統的一部分。AssistantAgent 負責處理代理人（或機器人）的回應，而 UserProxyAgent 則充當用戶的代理，接收和處理用戶的輸入。
-  
+  autogen_agentchat.agents 模組用於初始化該套件提供的各種預定義代理人（agents）。
+
+  AssistantAgent 和 UserProxyAgent這兩個套件屬於自動生成代理人對話系統的一部分。AssistantAgent 負責處理代理人（或機器人）的回應，是一個可整合工具並提供輔助的 AI 代理人，支援同步與非同步回應機制，而 UserProxyAgent 則充當用戶的代理，接收和處理用戶的輸入。
+   ```
+    local_data_agent = AssistantAgent("data_agent", model_client)
+    local_assistant = AssistantAgent("assistant", model_client)
+    local_user_proxy = UserProxyAgent("user_proxy")
+   ```
 ****
 
   ### 3.2 autogen_agentchat.conditions
-  TextMentionTermination：這是一個條件模組，用於在對話系統中設定終止對話的條件，通常用於根據文本中的特定提及來終止對話。而這次的程式碼是使用"exit"來當終結對話的特定詞。
+  autogen_agentchat.conditions 模組提供多代理人團隊（multi-agent teams）行為控制的各種終止條件。
+  
+  TextMentionTermination這是一個條件模組，用於在對話系統中設定終止對話的條件，通常用於根據文本中的特定提及來終止對話。而這次的程式碼是使用"exit"來當終結對話的特定詞。
   ```
   termination_condition = TextMentionTermination("exit")
   ```
 ****
 
   ### 3.3 autogen_agentchat.teams
-  RoundRobinGroupChat：這個模組實現了循環輪播組聊功能，用於將不同的對話參與者分配給多個team。
-
+  autogen_agentchat.teams 模組提供多個預定義的多代理人團隊（multi-agent teams）實作，每個團隊都繼承自 BaseGroupChat (主要用於管理多代理人對話團隊)類別。
+  
+  RoundRobinGroupChat這個模組實現了循環輪播組聊功能，用於將不同的對話參與者分配給多個team。
+  ```
+  local_team = RoundRobinGroupChat(
+          [local_data_agent, local_assistant, local_user_proxy],
+          termination_condition=termination_condition
+      )
+  ```
 ****
 
   ### 3.4 autogen_agentchat.messagautogen_agentchat.messageses
-  TextMessage：這個模組定義了文本訊息的結構，用於在系統中處理和生成文本訊息。
+  autogen_agentchat.messages 模組定義了多種用於代理人之間通訊的訊息類型，每種訊息類型都繼承自 BaseChatMessage 或 BaseAgentEvent 類別，主要作用是標準化代理人之間的訊息格式，以確保有效的通訊和互動。
+  
+  TextMessage這個模組定義了文本訊息的結構，標準化了代理人之間的文字訊息格式，使其能夠在系統內進行一致的處理，用於在系統中處理和生成文本訊息。
+   ```
+    messages = []
+    async for event in local_team.run_stream(task=prompt):
+        if isinstance(event, TextMessage):
+            print(f"[{event.source}] => {event.content}\n")
+            messages.append({
+                "batch_start": start_idx,
+                "batch_end": start_idx + len(chunk) - 1,
+                "source": event.source,
+                "content": event.content,
+                "type": event.type,
+                "prompt_tokens": event.models_usage.prompt_tokens if event.models_usage else None,
+                "completion_tokens": event.models_usage.completion_tokens if event.models_usage else None
+            })
+    return messages
+   ```
 
 ****
 
   ### 3.5 autogen_ext.models.openai
-  OpenAIChatCompletionClient：這是一個與OpenAI對話完成模型集成的客戶端，用於向OpenAI模型發送對話提示並接收完成的對話回應。
-
+  autogen_ext.models.openai 模組提供 OpenAIChatCompletionClient 類別，用於與 OpenAI 託管的對話模型進行交互，使他能與OpenAI對話完成模型集成的客戶端，用於向OpenAI模型發送對話提示並接收完成的對話回應。
+ ```
+     model_client = OpenAIChatCompletionClient(
+        model="gemini-2.0-flash",
+        api_key=gemini_api_key,
+    )
+ ```
 
 # 課程練習
 
