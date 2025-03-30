@@ -181,8 +181,8 @@ def fetch_youbike_data():
 |:--:|:--:|
 | [interview.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/interview.csv) |[DRai2.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai2.py) |
 
-<img scr="">
-<img scr="">
+<img scr="https://github.com/MocuAcqu/1132Database/blob/main/DRai2_1.png">
+<img scr="https://github.com/MocuAcqu/1132Database/blob/main/DRai2_2.png">
 
 
 # HW3
