@@ -4,6 +4,14 @@
  - 姓名：邱鈺婷
  - 系級：科技系116
 
+## 目錄
+- [HW1](#HW1)
+  - [1.資料抽換及問題抽換](#1.資料抽換及問題抽換)
+  - [2.架構圖](#2.架構圖)
+  - [3.使用的AI Agent](#3.使用的AI Agent)
+- [HW2](#HW2)
+- [HW3](#HW3)
+
 # 作業繳交區
 
 # HW1
@@ -19,7 +27,7 @@
      - [youbikeAgent.py](https://github.com/MocuAcqu/1132Database/blob/main/youbikeAgent.py)
      - [youbike_analysis_log.csv](https://github.com/MocuAcqu/1132Database/blob/main/youbike_analysis_log.csv)
 
-  ## 1. 資料抽換及問題抽換
+  ## 1.資料抽換及問題抽換
 我將資料換成台北市 YouBike 2.0 的API，他會每分鐘刷新一次資料，並且特別抓取我需要的幾個站點和站點資訊的欄位來分析。
 
   ```
@@ -86,11 +94,11 @@ def fetch_youbike_data():
 
 
 
-  ## 2. 架構圖
+  ## 2.架構圖
    ![image](https://github.com/MocuAcqu/1132Database/blob/main/youbike.drawio.png)
 
 
-  ## 3. 使用的AI Agent
+  ## 3.使用的AI Agent
   ```
   from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
   from autogen_agentchat.conditions import TextMentionTermination
