@@ -216,4 +216,4 @@ def fetch_youbike_data():
 
 | debug_1_after_login |  debug_2_after_profile | debug_3_after_click_post_box |  debug_4_after_click_post_box |
 |:--:|:--:|:--:|:--:|
-| ![image](https://github.com/MocuAcqu/1132Database/blob/main/DRai/interview.csv) |![image](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai2.py) |
+| ![image](https://github.com/MocuAcqu/1132Database/blob/main/debug_1_after_login.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/debug_2_after_profile.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/debug_3_after_click_post_box.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/debug_4_after_click_post_box.png) |
