@@ -7,7 +7,7 @@
 # 作業繳交區
 
 # HW1
-尋找與確認要研究的方向，完成對程式碼部分的資料抽換及問題抽換，並製作架構圖(流程圖)
+完成對程式碼部分的資料抽換及問題抽換，並製作架構圖(流程圖)
 
   ## 【Youbike探查器】
   
@@ -162,21 +162,29 @@ def fetch_youbike_data():
     )
  ```
 
-# 課程練習
+# HW2
+完成課程中所提到關於DRai的相關程式碼作業，可以自己更改CSV檔案的內容，並提供程式碼執行截圖。
 
-## DRai
-### 【親子對話分析專家】
+## 【親子對話分析專家】
 
 假設身分為親子對話分析專家，去分析一段錄音逐字對話紀錄中，是否觸及評分項目的標記，並輸出成CSV檔。
-- 使用資料: [113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv)
-- 程式碼: [DRai.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai.py)
+| 使用資料  | 程式碼 |
+|:--:|:--:|
+|[113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) | [DRai.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai.py) |
 
 
-### 【大學生面試對話分析專家】
+## 【大學生面試對話分析專家】
 
 假設身分為大學生面試對話分析專家，去分析一段錄音逐字對話紀錄中，是否觸及評分項目的標記，並輸出成CSV檔。(替換老師範例資料)
 
 此對話紀錄來自於AI生成。
-- 使用資料: [interview.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/interview.csv)
-- 程式碼: [DRai2.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai2.py)
+| 使用資料 |  程式碼 |
+|:--:|:--:|
+| [interview.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/interview.csv) |[DRai2.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai2.py) |
+
+
+# HW3
+
+
+
 
