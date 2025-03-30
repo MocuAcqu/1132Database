@@ -182,6 +182,7 @@ def fetch_youbike_data():
 |:--:|:--:|
 |[113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) | [DRai.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai.py) |
 
+****
 
 ## 【大學生面試對話分析專家】
 
@@ -201,8 +202,7 @@ def fetch_youbike_data():
 利用Playwright控制瀏覽器，並給予程式碼的執行截圖，截圖方式同HW2
 
 ## 【moodle】
-| 使用資料 |  程式碼 |
-|:--:|:--:|
-| [interview.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/interview.csv) |[DRai2.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/DRai2.py) |
+   - 程式碼參考: 
+     - [moodleAI.py](https://github.com/MocuAcqu/1132Database/blob/main/moodleAI.py)
 
 
