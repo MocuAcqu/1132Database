@@ -213,6 +213,5 @@ def fetch_youbike_data():
 
 ## 輸出結果截圖
  ![image](https://github.com/MocuAcqu/1132Database/blob/main/moodle_1.png) 
-| ![image](https://github.com/MocuAcqu/1132Database/blob/main/DRai2_1.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/DRai2_2.png) |
-|:--:|:--:||:--:|:--:|
+
 
