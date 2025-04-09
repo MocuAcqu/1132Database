@@ -225,4 +225,4 @@ def fetch_youbike_data():
 ## PDF匯出測試 - DRai 親子對話分析
 | 程式碼 | 使用的CSV檔案 | 輸出結果 |
 |:--:|:--:|:--:|
-| [moodleAI.py](https://github.com/MocuAcqu/1132Database/blob/main/moodleAI.py) | [113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) ||
+| [getPDF.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.py) | [113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) | [getPDF.pdf](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.pdf) |
