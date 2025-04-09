@@ -316,7 +316,7 @@ def fetch_youbike_data():
 
 - **HW3** : 控自瀏覽器登入網站、進行操作
 
- 自動輸入帳密登入Github(但因為需要雙重認證，目前雙重認證部分仍須手動輸入)，接著跳轉到指定編輯介面(hw4回饋內容)，自動寫入AI Agent分析之內容，並點擊Commit changes進行儲存。
+  自動輸入帳密登入Github(但因為需要雙重認證，目前雙重認證部分仍須手動輸入)，接著跳轉到指定編輯介面(hw4回饋內容)，自動寫入AI Agent分析之內容，並點擊Commit changes進行儲存。
   ```
     def upload_to_github(content: str):
       with sync_playwright() as p:
@@ -366,7 +366,7 @@ def fetch_youbike_data():
 
 - **HW4**練習 : 輸入CSV檔案進行分析並輸出PDF檔案
 
-設定html框架，讓PDF輸出格式固定完整，將分析內容最終可匯出成CSV檔案和PDF檔案。
+ 設定html框架，讓PDF輸出格式固定完整，將分析內容最終可匯出成CSV檔案和PDF檔案。
   ```
     html_template = """
     <!DOCTYPE html>
