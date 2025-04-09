@@ -401,51 +401,6 @@ def fetch_youbike_data():
    </body>
    </html>
    """
-
-  def analyze(file, extra_instruction):
-    df = pd.read_csv(file)
-    results = []
-
-    for _, row in df.iterrows():
-        name = row.get("name", "無名")
-        content = str(row.get("content", "")).strip()
-        if not content:
-            continue
-
-        # 評估五項標準
-        score_content = score_prompt(content + "\n" + extra_instruction)
-        score_response = model_flash.generate_content(score_content)
-        score_json = parse_response(score_response.text)
-
-        # AI 回饋
-        feedback_content = feedback_prompt(content + "\n" + extra_instruction)
-        feedback_response = model_pro.generate_content(feedback_content)
-        feedback = feedback_response.text.strip()
-
-        result_row = {
-            "name": name,
-            "content": content,
-            "AI回饋": feedback,
-            **score_json
-        }
-        results.append(result_row)
-
-    # 儲存 CSV，解決中文亂碼
-    df_result = pd.DataFrame(results)
-    df_result.to_csv("作文回饋.csv", index=False, encoding="utf-8-sig")
-
-    # 儲存 PDF
-    html_out = Template(html_template).render(results=results, criteria=ITEMS)
-    with open("getHTML.html", "w", encoding="utf-8") as f:
-        f.write(html_out)
-
-    pdfkit.from_file("getHTML.html", "getPDF.pdf")
-
-        # 上傳回饋文字至 GitHub
-    all_feedback_text = "\n\n".join([f"{r['name']}：\n{r['AI回饋']}" for r in results])
-    upload_to_github(all_feedback_text)
-
-    return "作文回饋.csv", "getPDF.pdf"
   ```
 
 
