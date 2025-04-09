@@ -220,9 +220,14 @@ def fetch_youbike_data():
 | ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/debug_1_after_login.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/images/debug_2_after_profile.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/debug_3_after_click_post_box.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/images/debug_4_after_click_post_box.png) |
 
 # HW4
-利用本周(04/01)的範例程式碼，綜合前三項作業內容，生成一個可以下載的PDF
+利用04/01的範例程式碼，綜合前三項作業內容，生成一個可以下載的PDF
 
 ## PDF匯出測試 - DRai 親子對話分析
+| 程式碼 | 使用的CSV檔案 | 輸出結果 |
+|:--:|:--:|:--:|
+| [getPDF.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.py) | [113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) | [getPDF.pdf](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.pdf) |
+
+## 綜合成果
 | 程式碼 | 使用的CSV檔案 | 輸出結果 |
 |:--:|:--:|:--:|
 | [getPDF.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.py) | [113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) | [getPDF.pdf](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.pdf) |
