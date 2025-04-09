@@ -50,7 +50,7 @@ HTML_TEMPLATE = """
     </style>
 </head>
 <body>
-    <h2>日誌分析報告</h2>
+    <h2>親子對話分析報告</h2>
     <table>
         <thead>
             <tr>
