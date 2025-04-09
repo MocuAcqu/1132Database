@@ -318,48 +318,48 @@ def fetch_youbike_data():
 
  自動輸入帳密登入Github(但因為需要雙重認證，目前雙重認證部分仍須手動輸入)，接著跳轉到指定編輯介面(hw4回饋內容)，自動寫入AI Agent分析之內容，並點擊Commit changes進行儲存。
   ```
-   def upload_to_github(content: str):
-     with sync_playwright() as p:
-         browser = p.chromium.launch(headless=False)
-         page = browser.new_page()
- 
-         github_username = os.getenv("github_username")
-         github_pass = os.getenv("github_password")
- 
-         print("登入 GitHub...")
-         page.goto("https://github.com/login")
-         page.fill("#login_field", github_username)
-         page.fill("#password", github_pass)
-         page.click("input[name='commit']")
-         page.wait_for_timeout(7000)
- 
-         # 跳轉到目標頁面
-         page.goto("https://github.com/MocuAcqu/1132Database/edit/main/hw4%E5%9B%9E%E9%A5%8B%E5%85%A7%E5%AE%B9")
-         
-         # 點擊 CodeMirror 的可編輯區塊以聚焦（選一個內層 div）
-         editor = page.locator(".cm-content").first
-         editor.click()
-         page.keyboard.press("Control+A")  # 如果要清空原有內容
-         page.keyboard.press("Backspace")
- 
-         page.keyboard.type(content)
- 
-         # 提交更改
-         page.click("button:has-text('Commit changes')")
-         page.wait_for_timeout(1000)
- 
-         # 等待彈窗出現
-         page.wait_for_selector("div[role='dialog']")  # GitHub 的 modal 是 dialog 角色
- 
-         # 點擊彈窗內的第二個 Commit changes
-         modal_commit_button = page.locator("div[role='dialog'] button:has-text('Commit changes')").first
-         modal_commit_button.wait_for()
-         modal_commit_button.click()
-         print("點擊彈窗內的 Commit changes")
- 
-         print("已更新 GitHub 檔案！")
-         page.wait_for_timeout(2000)
-         browser.close()
+    def upload_to_github(content: str):
+      with sync_playwright() as p:
+          browser = p.chromium.launch(headless=False)
+          page = browser.new_page()
+  
+          github_username = os.getenv("github_username")
+          github_pass = os.getenv("github_password")
+  
+          print("登入 GitHub...")
+          page.goto("https://github.com/login")
+          page.fill("#login_field", github_username)
+          page.fill("#password", github_pass)
+          page.click("input[name='commit']")
+          page.wait_for_timeout(7000)
+  
+          # 跳轉到目標頁面
+          page.goto("https://github.com/MocuAcqu/1132Database/edit/main/hw4%E5%9B%9E%E9%A5%8B%E5%85%A7%E5%AE%B9")
+          
+          # 點擊 CodeMirror 的可編輯區塊以聚焦（選一個內層 div）
+          editor = page.locator(".cm-content").first
+          editor.click()
+          page.keyboard.press("Control+A")  # 如果要清空原有內容
+          page.keyboard.press("Backspace")
+  
+          page.keyboard.type(content)
+  
+          # 提交更改
+          page.click("button:has-text('Commit changes')")
+          page.wait_for_timeout(1000)
+  
+          # 等待彈窗出現
+          page.wait_for_selector("div[role='dialog']")  # GitHub 的 modal 是 dialog 角色
+  
+          # 點擊彈窗內的第二個 Commit changes
+          modal_commit_button = page.locator("div[role='dialog'] button:has-text('Commit changes')").first
+          modal_commit_button.wait_for()
+          modal_commit_button.click()
+          print("點擊彈窗內的 Commit changes")
+  
+          print("已更新 GitHub 檔案！")
+          page.wait_for_timeout(2000)
+          browser.close()
   ```
 
 ****
@@ -368,39 +368,39 @@ def fetch_youbike_data():
 
 設定html框架，讓PDF輸出格式固定完整，將分析內容最終可匯出成CSV檔案和PDF檔案。
   ```
-   html_template = """
-   <!DOCTYPE html>
-   <html>
-   <head>
-     <meta charset="UTF-8">
-     <title>作文回饋報告</title>
-     <style>
-       body { font-family: "Noto Sans TC", sans-serif; margin: 2em; }
-       h2 { color: #333; border-bottom: 2px solid #ddd; padding-bottom: 4px; }
-       .essay { margin-bottom: 2em; padding: 1em; border: 1px solid #ccc; border-radius: 8px; }
-       .feedback { background-color: #f9f9f9; padding: 0.5em; margin-top: 1em; border-left: 4px solid #007bff; }
-       .criteria { margin-top: 1em; }
-     </style>
-   </head>
-   <body>
-     <h1>作文分析與回饋報告</h1>
-     {% for item in results %}
-     <div class="essay">
-       <h2>{{ item['name'] }}</h2>
-       <p><strong>原始內容：</strong> {{ item['content'] }}</p>
-       <div class="criteria">
-         {% for crit in criteria %}
-           <p><strong>{{ crit }}：</strong> {{ item[crit] }}</p>
-         {% endfor %}
-       </div>
-       <div class="feedback">
-         <strong>AI 回饋：</strong> {{ item['AI回饋'] }}
-       </div>
-     </div>
-     {% endfor %}
-   </body>
-   </html>
-   """
+    html_template = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>作文回饋報告</title>
+      <style>
+        body { font-family: "Noto Sans TC", sans-serif; margin: 2em; }
+        h2 { color: #333; border-bottom: 2px solid #ddd; padding-bottom: 4px; }
+        .essay { margin-bottom: 2em; padding: 1em; border: 1px solid #ccc; border-radius: 8px; }
+        .feedback { background-color: #f9f9f9; padding: 0.5em; margin-top: 1em; border-left: 4px solid #007bff; }
+        .criteria { margin-top: 1em; }
+      </style>
+    </head>
+    <body>
+      <h1>作文分析與回饋報告</h1>
+      {% for item in results %}
+      <div class="essay">
+        <h2>{{ item['name'] }}</h2>
+        <p><strong>原始內容：</strong> {{ item['content'] }}</p>
+        <div class="criteria">
+          {% for crit in criteria %}
+            <p><strong>{{ crit }}：</strong> {{ item[crit] }}</p>
+          {% endfor %}
+        </div>
+        <div class="feedback">
+          <strong>AI 回饋：</strong> {{ item['AI回饋'] }}
+        </div>
+      </div>
+      {% endfor %}
+    </body>
+    </html>
+    """
   ```
 
 
