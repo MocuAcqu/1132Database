@@ -98,7 +98,7 @@ def fetch_youbike_data():
 
 
   ## 2.架構圖
-   ![image](https://github.com/MocuAcqu/1132Database/blob/main/youbike.drawio.png)
+   ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/youbike.drawio.png)
 
 
   ## 3.使用的AI Agent
@@ -195,7 +195,7 @@ def fetch_youbike_data():
 
 
 ### 輸出結果截圖
-| ![image](https://github.com/MocuAcqu/1132Database/blob/main/DRai2_1.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/DRai2_2.png) |
+| ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/DRai2_1.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/DRai2_2.png) |
 |--|--|
 
 
@@ -210,14 +210,14 @@ def fetch_youbike_data():
    - 功能: 此程式可以抓取學生moodle上特定課程的特定作業回答
 
    - 啟動過程流程圖
-     ![image](https://github.com/MocuAcqu/1132Database/blob/main/moodleAI.drawio.png)
+     ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/moodleAI.drawio.png)
 
 ## 輸出結果截圖
- ![image](https://github.com/MocuAcqu/1132Database/blob/main/moodle_1.png) 
+ ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/moodle_1.png) 
 
 | debug_1_after_login |  debug_2_after_profile | debug_3_after_click_post_box |  debug_4_after_click_post_box |
 |:--:|:--:|:--:|:--:|
-| ![image](https://github.com/MocuAcqu/1132Database/blob/main/debug_1_after_login.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/debug_2_after_profile.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/debug_3_after_click_post_box.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/debug_4_after_click_post_box.png) |
+| ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/debug_1_after_login.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/images/debug_2_after_profile.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/debug_3_after_click_post_box.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/images/debug_4_after_click_post_box.png) |
 
 # HW4
 利用本周(04/01)的範例程式碼，綜合前三項作業內容，生成一個可以下載的PDF
