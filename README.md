@@ -233,7 +233,7 @@ def fetch_youbike_data():
 | [github2.py](https://github.com/MocuAcqu/1132Database/blob/main/hw4/github2.py) | [作文資料集.csv](https://github.com/MocuAcqu/1132Database/blob/main/hw4/作文資料集.csv) | [作文回饋.csv](https://github.com/MocuAcqu/1132Database/blob/main/hw4/作文回饋.csv) | [getPDF.pdf](https://github.com/MocuAcqu/1132Database/blob/main/hw4/getPDF.pdf) | [hw4回饋內容](https://github.com/MocuAcqu/1132Database/blob/main/hw4%E5%9B%9E%E9%A5%8B%E5%85%A7%E5%AE%B9)
 
 ### 內容說明
-本作業是一個作文內容分析與AI回饋系統，使用者可以在gradio介面輸入CSV檔案(這裡使用"作文資料集.csv")，接著程式會去根據評分項目去分析是否有觸及個項目(有則填"有"，否則"無")，並使用AI Agent去分析文章內容並給予回饋，最後會輸出分析結果的PDF檔案、CSV檔案，且程式會自動登入github，分析結果的文字自動寫入在指定的檔案中，並儲存。
+本作業是一個作文內容分析與AI回饋系統(延續之前批改系統的想法)，使用者可以在gradio介面輸入CSV檔案(這裡使用"作文資料集.csv")，接著程式會去根據評分項目去分析是否有觸及個項目(有則填"有"，否則"無")，並使用AI Agent去分析文章內容並給予回饋，最後會輸出分析結果的PDF檔案、CSV檔案，且程式會自動登入github，分析結果的文字自動寫入在指定的檔案中，並儲存。
 
 | Gradio介面 | 終端機截圖 |
 |:--:|:--:|
