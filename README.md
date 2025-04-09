@@ -228,6 +228,6 @@ def fetch_youbike_data():
 | [getPDF.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.py) | [113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) | [getPDF.pdf](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.pdf) |
 
 ## 綜合成果
-| 程式碼 | 使用的CSV檔案 | 輸出結果 |
-|:--:|:--:|:--:|
+| 程式碼 | 輸入的CSV檔案 | 輸出的CSV檔案 | 輸出的pdf檔案 | 輸出的github結果 |
+|:--:|:--:|:--:|:--:|:--:|
 | [getPDF.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.py) | [113.csv](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) | [getPDF.pdf](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.pdf) |
