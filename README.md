@@ -235,9 +235,9 @@ def fetch_youbike_data():
 ### 內容說明
 本作業是一個作文內容分析與AI回饋系統，使用者可以在gradio介面輸入CSV檔案(這裡使用"作文資料集.csv")，接著程式會去根據評分項目去分析是否有觸及個項目(有則填"有"，否則"無")，並使用AI Agent去分析文章內容並給予回饋，最後會輸出分析結果的PDF檔案、CSV檔案，且程式會自動登入github，分析結果的文字自動寫入在指定的檔案中，並儲存。
 
-| 自動login後須雙重認證(手動) | Gradio介面 | 終端機截圖 |
-|:--:|:--:|:--:|
-| ![image](https://github.com/MocuAcqu/1132Database/blob/main/hw4/login.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/images/hw4_1.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/hw4_2.png) |
+| Gradio介面 | 終端機截圖 |
+|:--:|:--:|
+|![image](https://github.com/MocuAcqu/1132Database/blob/main/images/hw4_1.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/hw4_2.png) |
 
 ### 程式碼 & 對應作業內容
 - **HW1** : 使用AI Agent分析CSV檔案內容、輸出CSV檔案分析結果
