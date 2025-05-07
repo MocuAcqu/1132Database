@@ -14,6 +14,7 @@
   - [【大學生面試對話分析專家】](#大學生面試對話分析專家)
 - ### [HW3](#hw3-1)
 - ### [HW4](#hw4-1)
+- ### [HW5](#hw5-1)
 
 # 作業繳交區
 
@@ -402,6 +403,15 @@ def fetch_youbike_data():
     </html>
     """
   ```
+# HW5
+利用本周的範例程式碼(或其他方式)將前幾周的內容加上前端功能。
 
+這裡我直接將原本期末報告透過Flask加上前端內容。
 
+| 原版程式碼 | 使用的txt檔案 | 輸出結果 |
+|:--:|:--:|:--:|
+| [EWA.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.py) | [Dreams.txt](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) | [analysis_report.pdf](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.pdf) |
 
+| Flask版程式碼 |
+|:--:|
+| [app.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.py) |
