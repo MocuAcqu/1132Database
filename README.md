@@ -410,8 +410,8 @@ def fetch_youbike_data():
 
 | 原版程式碼 | 使用的txt檔案 | 輸出結果 |
 |:--:|:--:|:--:|
-| [EWA.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.py) | [Dreams.txt](https://github.com/MocuAcqu/1132Database/blob/main/DRai/113.csv) | [analysis_report.pdf](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.pdf) |
+| [EWA.py](https://github.com/MocuAcqu/1132Database/blob/main/EWA.py) | [Dreams.txt](https://github.com/MocuAcqu/1132Database/blob/main/Dreams.txt) | [analysis_report.pdf](https://github.com/MocuAcqu/1132Database/blob/main/analysis_report.pdf) |
 
 | Flask版程式碼 |
 |:--:|
-| [app.py](https://github.com/MocuAcqu/1132Database/blob/main/DRai/getPDF.py) |
+| [app.py](https://github.com/MocuAcqu/1132Database/blob/main/app.py) |
