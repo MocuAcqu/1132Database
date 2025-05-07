@@ -406,12 +406,15 @@ def fetch_youbike_data():
 # HW5
 利用本周的範例程式碼(或其他方式)將前幾周的內容加上前端功能。
 
-這裡我直接將原本期末報告透過Flask加上前端內容。
+這裡我直接將期末報告中，我所撰寫之程式透過Flask加上前端內容。
 
-| 原版程式碼 | 使用的txt檔案 | 輸出結果 |
+| 原版程式碼 | 使用的txt檔案 | 輸出結果 | Flask版程式碼 |
+|:--:|:--:|:--:|:--:|
+| [EWA.py](https://github.com/MocuAcqu/1132Database/blob/main/EWA.py) | [Dreams.txt](https://github.com/MocuAcqu/1132Database/blob/main/Dreams.txt) | [analysis_report.pdf](https://github.com/MocuAcqu/1132Database/blob/main/analysis_report.pdf) | [app.py](https://github.com/MocuAcqu/1132Database/blob/main/app.py) |
+
+### 內容說明
+本作業是一個英文寫作分析，他透過AI Agent分析使用者之文章，並藉由prompt下達明確輸出結果，讓使用者可以下載分析結果的PDF檔案，也可以透過Quill編輯器，編輯分析結果，再輸出。
+
+| 使用介面 | 分析結果 | 分析結果可編輯 |
 |:--:|:--:|:--:|
-| [EWA.py](https://github.com/MocuAcqu/1132Database/blob/main/EWA.py) | [Dreams.txt](https://github.com/MocuAcqu/1132Database/blob/main/Dreams.txt) | [analysis_report.pdf](https://github.com/MocuAcqu/1132Database/blob/main/analysis_report.pdf) |
-
-| Flask版程式碼 |
-|:--:|
-| [app.py](https://github.com/MocuAcqu/1132Database/blob/main/app.py) |
+|![image](https://github.com/MocuAcqu/1132Database/blob/main/images/hw5_1.png) | ![image](https://github.com/MocuAcqu/1132Database/blob/main/images/hw5_2.png) |![image](https://github.com/MocuAcqu/1132Database/blob/main/images/hw5_3.png) |
